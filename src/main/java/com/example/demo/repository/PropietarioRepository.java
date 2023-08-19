@@ -10,5 +10,8 @@ public interface PropietarioRepository {
 	public void eliminar(Integer id);
 	
 	public List<Propietario> buscarTodos();
+	
+	public Propietario seleccionarPorId(Integer id);
+
 
 }

@@ -21,7 +21,7 @@ public class PropietarioRepositoryImpl implements PropietarioRepository {
 	private EntityManager entityManager;
 
 	@Override
-	 @Transactional(value = TxType.REQUIRED)
+	@Transactional(value = TxType.REQUIRED)
 
 	public void insertar(Propietario propietario) {
 		System.out.println(TransactionSynchronizationManager.isActualTransactionActive());
@@ -31,16 +31,15 @@ public class PropietarioRepositoryImpl implements PropietarioRepository {
 	}
 
 	@Override
-	 @Transactional(value = TxType.REQUIRED)
+	@Transactional(value = TxType.REQUIRED)
 
 	public void actualizar(Propietario propietario) {
 		this.entityManager.merge(propietario);
 
 	}
 
-	
 	@Override
-	 @Transactional(value = TxType.REQUIRED)
+	@Transactional(value = TxType.REQUIRED)
 
 	public void eliminar(Integer id) {
 		this.entityManager.remove(id);
@@ -48,12 +47,18 @@ public class PropietarioRepositoryImpl implements PropietarioRepository {
 	}
 
 	@Override
-	 @Transactional(value = TxType.NOT_SUPPORTED)
+	@Transactional(value = TxType.NOT_SUPPORTED)
 
 	public List<Propietario> buscarTodos() {
 		TypedQuery<Propietario> query = this.entityManager.createQuery("SELECT p FROM Propietario p",
 				Propietario.class);
 		return query.getResultList();
+	}
+
+	@Override
+	public Propietario seleccionarPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.entityManager.find(Propietario.class, id);
 	}
 
 }

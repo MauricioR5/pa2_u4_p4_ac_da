@@ -19,30 +19,35 @@ public class PropietarioServiceImpl implements PropietarioService {
 	private PropietarioRepository propietarioRepository;
 
 	@Override
-	 @Transactional(value = TxType.REQUIRED)
+	@Transactional(value = TxType.REQUIRED)
 	public void agregar(Propietario propietario) {
 		this.propietarioRepository.insertar(propietario);
 
 	}
 
 	@Override
-	 @Transactional(value = TxType.REQUIRED)
+	@Transactional(value = TxType.REQUIRED)
 
-	public void modificar(Propietario propietario) {
+	public void actualizar(Propietario propietario) {
 		this.propietarioRepository.actualizar(propietario);
 	}
 
 	@Override
-	 @Transactional(value = TxType.REQUIRED)
+	@Transactional(value = TxType.REQUIRED)
 
 	public void borrar(Integer id) {
 		this.propietarioRepository.eliminar(id);
 	}
 
 	@Override
-	 @Transactional(value = TxType.NOT_SUPPORTED)
+	@Transactional(value = TxType.NOT_SUPPORTED)
 
 	public List<Propietario> buscarTodos() {
 		return this.propietarioRepository.buscarTodos();
+	}
+
+	@Override
+	public Propietario buscarPorId(Integer id) {
+		return this.propietarioRepository.seleccionarPorId(id);
 	}
 }

@@ -22,19 +22,11 @@ public class Pa2U4P4AcDaApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 
-		Propietario propietario = new Propietario();
-		propietario.setApellido("Cacuango");
-		propietario.setCedula("12456789");
-		propietario.setNombre("Mauricio");
+	
 
-		Propietario propietario2 = new Propietario();
-		propietario2.setApellido("Andrade");
-		propietario2.setCedula("7894561230");
-		propietario2.setNombre("Dennisse");
+		//   http://localhost:8080/concesionario/propietarios/buscar
 		
-	//	this.propietarioService.agregar(propietario2);
-	//	this.propietarioService.agregar(propietario2);
-
+		//   http://localhost:8080/concesionario/propietarios/buscarPorID/{idPropietario}
 	}
 
 }
