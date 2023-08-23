@@ -31,8 +31,7 @@ public class Pa2U4P4AcDaApplication implements CommandLineRunner{
 		prop2.setApellido("Estrella");
 		prop2.setCedula("62186565");
 		
-		//this.propietarioService.agregar(prop);
-		//this.propietarioService.agregar(prop2);
+	
 		
 	}
 	

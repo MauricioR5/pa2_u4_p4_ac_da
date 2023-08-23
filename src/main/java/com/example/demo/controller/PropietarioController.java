@@ -15,7 +15,7 @@ import com.example.demo.repository.modelo.Propietario;
 import com.example.demo.service.IPropietarioService;
 
 @Controller
-@RequestMapping("/propietarios")//en plural por buena practica
+@RequestMapping("/propietarios")
 public class PropietarioController {
 	 
 	@Autowired
@@ -42,7 +42,6 @@ public class PropietarioController {
 	public String actualizarPropietario(@PathVariable("idPropietario") Integer id, Propietario propietario) { //id y objeto a actualizar
 		this.propietarioService.modificar(propietario);
 		return "redirect:/propietarios/buscar";
-		//form me envia datos 
 	}
 	
 	//http://localhost:8080/concensionario/propietarios/borrar/1
